@@ -1,5 +1,4 @@
 <?php
-// use this code to extract email addresses from a text message 
 function parseText($input) {
   $email = array();
   $invalid_email = array(); 
@@ -35,7 +34,6 @@ function is_valid_email($email) {
 }
 
 function csv($input){
-
 return var_dump(parseText($input));
 }
 ?>
