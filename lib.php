@@ -34,6 +34,19 @@ function is_valid_email($email) {
 }
 
 function csv($input){
-return var_dump(parseText($input));
+$emailuser = parseText($input);
+$validuser = $emailuser['valid_email'];
+echo "email,\n";
+foreach ($validuser as $value) {
+echo $value.",\n";}
+}
+
+function listall($input){
+$emailuser = parseText($input);
+$validuser = $emailuser['valid_email'];
+
+foreach ($validuser as $value) {
+echo $value."\n";}
+
 }
 ?>
