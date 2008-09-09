@@ -58,4 +58,15 @@ $content .= "$value,\n";
 fwrite($handle, $content);
 fclose($handle);
 }
+
+function text_to_export($input){
+$emailuser = parseText($input);
+$validuser = $emailuser['valid_email'];
+$handle = fopen("export/valid_emails.txt", "w");
+foreach ($validuser as $value) {
+$content .= "$value\n";
+}
+fwrite($handle, $content);
+fclose($handle);
+}
 ?>
