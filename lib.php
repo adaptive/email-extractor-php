@@ -2,7 +2,7 @@
 function parseText($input) {
   $email = array();
   $invalid_email = array(); 
-  $input = ereg_replace("[^A-Za-z._0-9@ ]"," ",$input);
+  $input = ereg_replace("[^-A-Za-z._0-9@ ]"," ",$input);
  
   $token = trim(strtok($input, " "));
  
@@ -10,7 +10,7 @@ function parseText($input) {
  
     if(strpos($token, "@") !== false) {    
  
-      $token = ereg_replace("[^A-Za-z._0-9@]","", $token);
+      $token = ereg_replace("[^-A-Za-z._0-9@]","", $token);
  
       if(is_valid_email($email) !== true) {
         $email[] = strtolower($token);
@@ -29,7 +29,7 @@ function parseText($input) {
 }
  
 function is_valid_email($email) {
-  if (eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.([a-z]){2,4})$",$email)) return true;
+  if (eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5})$",$email)) return true;
   else return false;
 }
 
