@@ -27,9 +27,9 @@ function parseText($input) {
 //  return array("valid_email"=>$email, "invalid_email" => $invalid_email);
 	return array("valid_email"=>$email);
 }
- 
+
 function is_valid_email($email) {
-  if (eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5})$",$email)) return true;
+  if (eregi("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email)) return true;
   else return false;
 }
 
