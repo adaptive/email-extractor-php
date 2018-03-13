@@ -29,8 +29,8 @@ function parseText($input) {
 }
 
 function is_valid_email($email) {
-  if (eregi("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email)) return true;
-  else return false;
+  if (filter_var($email, FILTER_VALIDATE_EMAIL)) return true;
+  return false;
 }
 
 function csv($input){
