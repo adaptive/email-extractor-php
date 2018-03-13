@@ -38,14 +38,14 @@ $emailuser = parseText($input);
 $validuser = $emailuser['valid_email'];
 echo "email,\n";
 foreach ($validuser as $value) {
-echo $value.",\n";}
+echo $value.',\n';}
 }
 
 function listall($input){
 $emailuser = parseText($input);
 $validuser = $emailuser['valid_email'];
 foreach ($validuser as $value) {
-echo $value."\n";}
+echo $value.'\n';}
 }
 
 function csv_to_export($input){
@@ -53,7 +53,7 @@ $emailuser = parseText($input);
 $validuser = $emailuser['valid_email'];
 $handle = fopen("export/valid_emails.csv", "w");
 foreach ($validuser as $value) {
-$content .= "$value,\n";
+$content .= $value.',\n';
 }
 fwrite($handle, $content);
 fclose($handle);
@@ -64,7 +64,7 @@ $emailuser = parseText($input);
 $validuser = $emailuser['valid_email'];
 $handle = fopen("export/valid_emails.txt", "w");
 foreach ($validuser as $value) {
-$content .= "$value\n";
+$content .= $value.'\n';
 }
 fwrite($handle, $content);
 fclose($handle);
