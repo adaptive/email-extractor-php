@@ -8,4 +8,3 @@ csv_to_export($input);
 
 // export to text file
 text_to_export($input);
-?>

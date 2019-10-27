@@ -69,4 +69,3 @@ $content .= $value.'\n';
 fwrite($handle, $content);
 fclose($handle);
 }
-?>
